@@ -23,7 +23,7 @@ CREATE TABLE `User` (
     `name` VARCHAR(191) NULL,
     `email` VARCHAR(191) NULL,
     `emailVerified` DATETIME(3) NULL,
-    `passwordHash` VARCHAR(191) NULL,
+    `passwordHash` VARCHAR(256) NULL,
     `image` VARCHAR(191) NULL,
 
     UNIQUE INDEX `User_email_key`(`email`),
