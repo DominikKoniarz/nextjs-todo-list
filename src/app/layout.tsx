@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Instrument_Sans } from "next/font/google";
+import Header from "@/components/Header";
 import "./globals.css";
 
 const instrumentSans = Instrument_Sans({ subsets: ["latin"] });
@@ -16,7 +17,12 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en">
-			<body className={instrumentSans.className}>{children}</body>
+			<body
+				className={`${instrumentSans.className} bg-slate-800 text-white flex flex-col`}
+			>
+				<Header />
+				{children}
+			</body>
 		</html>
 	);
 }

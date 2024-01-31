@@ -7,8 +7,4 @@
 	body {
 		@apply h-full;
 	}
-
-	body {
-		@apply bg-slate-800 text-white;
-	}
 }
