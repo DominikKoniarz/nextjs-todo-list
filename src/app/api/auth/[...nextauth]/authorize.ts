@@ -13,7 +13,7 @@ export default async function authorize(
         const user = await prisma.user.findUnique({
             where: { email: credentials.email },
         });
-        if (!user) return null;
+        if (!user || !user.passwordHash) return null;
 
         const isPasswordValid = await verifyPassword(
             credentials.password,

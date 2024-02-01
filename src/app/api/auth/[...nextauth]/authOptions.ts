@@ -25,7 +25,7 @@ const authOptions: NextAuthOptions = {
                 },
                 password: { label: "Password", type: "password" },
             },
-            authorize,
+            authorize: authorize,
         }),
     ],
 };

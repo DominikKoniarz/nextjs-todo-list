@@ -8,7 +8,8 @@ export default async function TodosPage() {
     if (!session) redirect("/login");
 
     return (
-        <main className="flex h-full w-full items-center justify-center">
+        <main className="flex h-full w-full flex-col items-center justify-center gap-4">
+            {JSON.stringify(session, null, 2)}
             <Test />
         </main>
     );
