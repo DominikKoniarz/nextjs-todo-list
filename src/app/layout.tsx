@@ -3,7 +3,11 @@ import { Instrument_Sans } from "next/font/google";
 import Header from "@/components/Header";
 import "./globals.css";
 
-const instrumentSans = Instrument_Sans({ subsets: ["latin"] });
+const instrumentSans = Instrument_Sans({
+    subsets: ["latin"],
+    display: "swap",
+    adjustFontFallback: false,
+});
 
 export const metadata: Metadata = {
     title: "Todo List",
