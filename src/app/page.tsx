@@ -1,7 +1,7 @@
 export default function Home() {
-	return (
-		<main className="w-full h-full flex justify-center items-center">
-			Something will be here
-		</main>
-	);
+    return (
+        <main className="flex h-full w-full items-center justify-center">
+            Something will be here
+        </main>
+    );
 }

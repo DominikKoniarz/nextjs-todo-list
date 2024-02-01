@@ -6,23 +6,23 @@ import "./globals.css";
 const instrumentSans = Instrument_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-	title: "Todo List",
-	description: "Todo List application built with Next.js",
+    title: "Todo List",
+    description: "Todo List application built with Next.js",
 };
 
 export default function RootLayout({
-	children,
+    children,
 }: Readonly<{
-	children: React.ReactNode;
+    children: React.ReactNode;
 }>) {
-	return (
-		<html lang="en">
-			<body
-				className={`${instrumentSans.className} bg-slate-800 text-white flex flex-col`}
-			>
-				<Header />
-				{children}
-			</body>
-		</html>
-	);
+    return (
+        <html lang="en">
+            <body
+                className={`${instrumentSans.className} flex flex-col bg-slate-800 text-white`}
+            >
+                <Header />
+                {children}
+            </body>
+        </html>
+    );
 }
