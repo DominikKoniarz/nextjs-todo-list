@@ -4,25 +4,26 @@ import { z } from "zod";
 const emailSchema = z.string().email();
 
 export default function EmailInput() {
-	const { register } = useFormContext();
+    const { register } = useFormContext();
 
-	return (
-		<label
-			htmlFor="email-input"
-			className="font-bold flex text-lg flex-col gap-1"
-		>
-			Email:
-			<input
-				type="email"
-				required
-				className="p-2 text-black font-medium transition-colors text-base"
-				id="email-input"
-				{...register("email", {
-					required: "Email is required!",
-					validate: (email) =>
-						emailSchema.safeParse(email).success || "Invalid email!",
-				})}
-			/>
-		</label>
-	);
+    return (
+        <label
+            htmlFor="email-input"
+            className="flex flex-col gap-1 text-base font-bold"
+        >
+            Email:
+            <input
+                type="email"
+                required
+                className="p-2 font-medium text-black transition-colors"
+                id="email-input"
+                {...register("email", {
+                    required: "Email is required!",
+                    validate: (email) =>
+                        emailSchema.safeParse(email).success ||
+                        "Invalid email!",
+                })}
+            />
+        </label>
+    );
 }

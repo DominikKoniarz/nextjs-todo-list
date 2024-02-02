@@ -3,14 +3,14 @@
 import { useFormStatus } from "react-dom";
 
 export default function SubmitButton() {
-	const { pending } = useFormStatus();
+    const { pending } = useFormStatus();
 
-	return (
-		<button
-			className="px-4 py-2 bg-white text-lg text-black rounded-lg font-bold mt-1 w-fit mx-auto capitalize aria-disabled:opacity-60 transition-color duration-100"
-			aria-disabled={pending}
-		>
-			{pending ? "Loading..." : "Register"}
-		</button>
-	);
+    return (
+        <button
+            className="transition-color mx-auto mt-1 w-fit rounded-lg bg-white px-4 py-2 text-base font-bold capitalize text-black duration-100 aria-disabled:opacity-60"
+            aria-disabled={pending}
+        >
+            {pending ? "Loading..." : "Register"}
+        </button>
+    );
 }

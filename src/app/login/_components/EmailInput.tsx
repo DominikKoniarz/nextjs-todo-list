@@ -9,13 +9,13 @@ export default function EmailInput({ email, setEmail }: Props) {
     return (
         <label
             htmlFor="email-input"
-            className="flex flex-col gap-1 text-lg font-bold"
+            className="flex flex-col gap-1 text-base font-bold"
         >
             Email:
             <input
                 type="email"
                 required
-                className="p-2 text-base font-medium text-black transition-colors"
+                className="p-2 font-medium text-black transition-colors"
                 id="email-input"
                 name="email-input"
                 value={email}

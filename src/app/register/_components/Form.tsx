@@ -21,7 +21,7 @@ export default function Form() {
     return (
         <FormProvider {...methods}>
             <form
-                className="flex w-56 flex-col gap-4"
+                className="flex w-56 flex-col gap-3"
                 onSubmit={methods.handleSubmit(onSubmit)}
             >
                 <EmailInput />

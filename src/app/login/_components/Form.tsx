@@ -6,6 +6,7 @@ import PasswordInput from "./PasswordInput";
 import SubmitButton from "./SubmitButton";
 import { useState } from "react";
 import useHandleSubmit from "../_hooks/useHandleSubmit";
+import OtherProvidersLogin from "./OtherProvidersLogin";
 
 export default function Form() {
     const handleSubmit = useHandleSubmit();
@@ -14,7 +15,7 @@ export default function Form() {
 
     return (
         <form
-            className="flex w-56 flex-col gap-4"
+            className="flex w-56 flex-col gap-3"
             onSubmit={(e) => handleSubmit(e, email, passsword)}
         >
             <EmailInput email={email} setEmail={setEmail} />
