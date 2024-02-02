@@ -1,4 +1,3 @@
-import getAuth from "@/lib/getAuth";
 import HeaderItem from "./HeaderItem";
 import LogoutWrapper from "./LogoutWrapper";
 
@@ -18,11 +17,9 @@ const headerItems: HeaderItem[] = [
     },
 ];
 
-export default async function Header() {
-    const session = await getAuth();
-
+export default function Header() {
     return (
-        <ul className="h-22 flex w-full shrink-0 flex-row items-center gap-5 p-5">
+        <ul className="flex h-22 w-full shrink-0 flex-row items-center gap-5 p-5">
             {headerItems.map((item, index) => (
                 <HeaderItem
                     key={`${index}-${item.text}`}
@@ -30,7 +27,7 @@ export default async function Header() {
                     text={item.text}
                 />
             ))}
-            {session && <LogoutWrapper />}
+            <LogoutWrapper />
         </ul>
     );
 }
