@@ -33,7 +33,7 @@ CREATE TABLE `User` (
 -- CreateTable
 CREATE TABLE `Todo` (
     `id` VARCHAR(191) NOT NULL,
-    `content` VARCHAR(191) NOT NULL,
+    `content` VARCHAR(100) NOT NULL,
     `completed` BOOLEAN NOT NULL DEFAULT false,
     `userId` VARCHAR(191) NOT NULL,
     `createdAt` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),

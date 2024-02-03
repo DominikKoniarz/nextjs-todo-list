@@ -19,15 +19,17 @@ const headerItems: HeaderItem[] = [
 
 export default function Header() {
     return (
-        <ul className="flex h-22 w-full shrink-0 flex-row items-center gap-5 p-5">
-            {headerItems.map((item, index) => (
-                <HeaderItem
-                    key={`${index}-${item.text}`}
-                    href={item.href}
-                    text={item.text}
-                />
-            ))}
-            <LogoutWrapper />
-        </ul>
+        <header className="h-fit w-full">
+            <ul className="flex h-22 w-full shrink-0 flex-row items-center gap-5 p-5">
+                {headerItems.map((item, index) => (
+                    <HeaderItem
+                        key={`${index}-${item.text}`}
+                        href={item.href}
+                        text={item.text}
+                    />
+                ))}
+                <LogoutWrapper />
+            </ul>
+        </header>
     );
 }
