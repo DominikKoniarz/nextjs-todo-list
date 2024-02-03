@@ -2,6 +2,7 @@
 
 import getAuth from "@/lib/getAuth";
 import prisma from "@/lib/prisma";
+import { revalidatePath } from "next/cache";
 import { z } from "zod";
 
 const formSchema = z.object({
@@ -33,6 +34,8 @@ const addTodo = async (formData: FormData): Promise<Status> => {
                 content: result.data.content,
             },
         });
+
+        revalidatePath("/todos");
 
         return null;
     } catch (error) {

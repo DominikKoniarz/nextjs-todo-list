@@ -5,11 +5,14 @@ import SortingButtonsWrapper from "./_components/SortingButtonsWrapper";
 import TodosList from "./_components/TodosList";
 import HorizontalLine from "./_components/HorizontalLine";
 import { Toaster } from "react-hot-toast";
+import getUserTodos from "@/lib/getUserTodos";
 
 export default async function TodosPage() {
     const session = await getAuth();
 
     if (!session) redirect("/login");
+
+    const todos = await getUserTodos(session.user.id);
 
     return (
         <main className="flex h-full w-full flex-col items-center justify-center gap-4">
@@ -17,7 +20,7 @@ export default async function TodosPage() {
                 <Form />
                 <SortingButtonsWrapper />
                 <HorizontalLine />
-                <TodosList />
+                <TodosList todos={todos} />
             </div>
             <Toaster
                 position="bottom-right"
