@@ -4,10 +4,13 @@ import { Toaster } from "react-hot-toast";
 import getUserTodos from "@/lib/getUserTodos";
 import ClientComponentsWrapper from "./_components/ClientComponentsWrapper";
 import getFilter from "./_lib/getFilter";
+import getPage from "./_lib/getPage";
+import getUserTodosCount from "@/lib/getUserTodosCount";
 
 type Props = {
     searchParams: {
         filter?: string;
+        page?: string;
     };
 };
 
@@ -17,11 +20,16 @@ export default async function TodosPage({ searchParams }: Props) {
     if (!session) redirect("/login");
 
     const filter = getFilter(searchParams.filter);
-    const todos = await getUserTodos(session.user.id, filter);
+    const page = getPage(searchParams.page);
+
+    const countData = getUserTodosCount(session.user.id, filter);
+    const todosData = getUserTodos(session.user.id, filter, page);
+
+    const [todos, count] = await Promise.all([todosData, countData]);
 
     return (
         <main className="flex h-full w-full flex-col items-center justify-center gap-4">
-            <ClientComponentsWrapper todos={todos} />
+            <ClientComponentsWrapper todos={todos} count={count} />
             <Toaster
                 position="bottom-right"
                 toastOptions={{ duration: 2500 }}

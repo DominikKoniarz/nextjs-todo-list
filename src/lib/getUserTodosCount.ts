@@ -1,12 +1,11 @@
 import { Filters } from "@/types/todosPage";
 import prisma from "./prisma";
 
-export default async function getUserTodos(
+export default async function getUserTodosCount(
     userId: string,
     filter: Filters,
-    page: number,
 ) {
-    return prisma.todo.findMany({
+    return prisma.todo.count({
         where: {
             userId,
             completed:
@@ -16,15 +15,5 @@ export default async function getUserTodos(
                       ? false
                       : undefined,
         },
-        orderBy: {
-            createdAt: "desc",
-        },
-        select: {
-            id: true,
-            content: true,
-            completed: true,
-        },
-        take: 10,
-        skip: (page - 1) * 10,
     });
 }
