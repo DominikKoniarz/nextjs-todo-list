@@ -6,22 +6,14 @@ import HorizontalLine from "./HorizontalLine";
 import SortingButtonsWrapper from "./SortingButtonsWrapper";
 import TodosList from "./TodosList";
 import { useOptimistic } from "react";
+import useOptimisticTodosReducer from "../_hooks/useOptimisticTodosReducer";
 
 type Props = {
     todos: TodoType[];
 };
 
-const reducer = (state: TodoType[], newTodo: string) => [
-    {
-        id: String(state.length + 1),
-        content: newTodo,
-        completed: false,
-        pending: true,
-    },
-    ...state,
-];
-
 export default function ClientComponentsWrapper({ todos }: Props) {
+    const reducer = useOptimisticTodosReducer();
     const [optimisticTodos, addOptimisticTodo] = useOptimistic(todos, reducer);
 
     return (
