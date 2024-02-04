@@ -18,6 +18,7 @@ export default function EmailInput({ email, setEmail }: Props) {
                 className="p-2 font-medium text-black transition-colors"
                 id="email-input"
                 name="email-input"
+                placeholder="Your email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
             />

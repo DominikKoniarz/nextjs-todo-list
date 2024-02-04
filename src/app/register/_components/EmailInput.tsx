@@ -17,6 +17,7 @@ export default function EmailInput() {
                 required
                 className="p-2 font-medium text-black transition-colors"
                 id="email-input"
+                placeholder="Your email"
                 {...register("email", {
                     required: "Email is required!",
                     validate: (email) =>

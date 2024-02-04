@@ -14,6 +14,7 @@ export default function UsernameInput() {
                 required
                 className="p-2 font-medium text-black transition-colors"
                 id="username-input"
+                placeholder="Your username"
                 {...register("username", {
                     required: "Username is required!",
                     minLength: {
