@@ -1,12 +1,13 @@
 "use client";
 
+import { useOptimistic } from "react";
 import { TodoType } from "@/types/todosPage";
 import Form from "./Form";
 import HorizontalLine from "./HorizontalLine";
-import SortingButtonsWrapper from "./SortingButtonsWrapper";
+import FiltersButtonsWrapper from "./FiltersButtonsWrapper";
 import TodosList from "./TodosList";
-import { useOptimistic } from "react";
 import useOptimisticTodosReducer from "../_hooks/useOptimisticTodosReducer";
+import useFilter from "../_hooks/useFilter";
 
 type Props = {
     todos: TodoType[];
@@ -19,7 +20,7 @@ export default function ClientComponentsWrapper({ todos }: Props) {
     return (
         <section className="flex h-full w-full max-w-96 flex-col gap-4 py-10">
             <Form addOptimisticTodo={addOptimisticTodo} />
-            <SortingButtonsWrapper />
+            <FiltersButtonsWrapper />
             <HorizontalLine />
             <TodosList todos={optimisticTodos} />
         </section>
