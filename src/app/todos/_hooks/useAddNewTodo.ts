@@ -1,20 +1,20 @@
 import addTodo from "@/actions/addTodo";
-import { RefObject } from "react";
+import { Dispatch, SetStateAction } from "react";
 import toast from "react-hot-toast";
 
 const useAddNewTodo = () => {
     const addNewTodo = async (
-        formData: FormData,
-        formRef: RefObject<HTMLFormElement>,
+        newTodo: string,
+        setNewTodo: Dispatch<SetStateAction<string>>,
     ) => {
-        const result = await addTodo(formData);
+        const result = await addTodo(newTodo);
 
         if (result) {
             toast.error(result.error);
             return;
         }
 
-        formRef.current?.reset();
+        setNewTodo("");
     };
 
     return addNewTodo;

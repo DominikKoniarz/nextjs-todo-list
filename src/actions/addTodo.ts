@@ -17,12 +17,12 @@ const formSchema = z.object({
 
 type Status = { error: string } | null;
 
-const addTodo = async (formData: FormData): Promise<Status> => {
+const addTodo = async (newTodo: string): Promise<Status> => {
     try {
         const session = await getAuth();
         if (!session) return { error: "You must be logged in to add a todo!" };
 
-        const result = formSchema.safeParse({ content: formData.get("todo") });
+        const result = formSchema.safeParse({ content: newTodo });
         if (!result.success) {
             return { error: result.error.errors[0].message };
         }
