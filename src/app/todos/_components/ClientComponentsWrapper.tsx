@@ -7,7 +7,6 @@ import HorizontalLine from "./HorizontalLine";
 import FiltersButtonsWrapper from "./FiltersButtonsWrapper";
 import TodosList from "./TodosList";
 import useOptimisticTodosReducer from "../_hooks/useOptimisticTodosReducer";
-import useFilter from "../_hooks/useFilter";
 
 type Props = {
     todos: TodoType[];
