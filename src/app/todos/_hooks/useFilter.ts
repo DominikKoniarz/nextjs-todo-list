@@ -1,16 +1,12 @@
 import { useSearchParams } from "next/navigation";
-
-type Filters = "all" | "todo" | "completed";
+import getFilter from "../_lib/getFilter";
+import { Filters } from "@/types/todosPage";
 
 const useFilter = (): Filters => {
     const searchParams = useSearchParams();
 
     const filter = searchParams.get("filter");
-    if (!filter) return "all";
-    else if (filter === "all") return "all";
-    else if (filter === "todo") return "todo";
-    else if (filter === "completed") return "completed";
-    else return "all";
+    return getFilter(filter ?? undefined);
 };
 
 export default useFilter;

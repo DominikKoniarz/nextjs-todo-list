@@ -4,3 +4,5 @@ export type TodoType = {
     completed: boolean;
     pending?: boolean;
 };
+
+export type Filters = "all" | "todo" | "completed";
