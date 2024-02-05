@@ -14,6 +14,7 @@ export default function PasswordInput() {
                 required
                 className="p-2 font-medium text-black transition-colors"
                 id="password-input"
+                placeholder="********"
                 {...register("password", {
                     required: "Password is required!",
                     minLength: {

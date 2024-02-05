@@ -20,6 +20,7 @@ export default function PasswordInput({ password, setPassword }: Props) {
                 name="password-input"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
+                placeholder="********"
             />
         </label>
     );
