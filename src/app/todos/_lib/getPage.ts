@@ -4,6 +4,8 @@ const getPage = (page?: string) => {
         return 1;
     }
 
+    if (parsedPage < 1) return 1;
+
     return parsedPage;
 };
 

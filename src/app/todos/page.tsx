@@ -27,9 +27,15 @@ export default async function TodosPage({ searchParams }: Props) {
 
     const [todos, count] = await Promise.all([todosData, countData]);
 
+    if (todos.length === 0) redirect("/todos");
+
     return (
         <main className="flex h-full w-full flex-col items-center justify-center gap-4">
-            <ClientComponentsWrapper todos={todos} count={count} />
+            <ClientComponentsWrapper
+                todos={todos}
+                count={count}
+                selectedPage={page}
+            />
             <Toaster
                 position="bottom-right"
                 toastOptions={{ duration: 2500 }}

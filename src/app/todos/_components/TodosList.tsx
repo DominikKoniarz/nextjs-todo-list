@@ -20,7 +20,9 @@ export default function TodosList({ todos }: Props) {
                 ))
             ) : (
                 <li className="h-fit w-full text-center">
-                    <p className="w-full font-medium">No todos to display!</p>
+                    <p className="w-full font-medium">
+                        No todos to display for this filter!
+                    </p>
                 </li>
             )}
         </ul>
