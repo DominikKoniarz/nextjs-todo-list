@@ -18,7 +18,7 @@ export default async function Statistics() {
         <section className="mt-2 flex w-fit flex-row flex-wrap justify-center gap-6 px-4 font-bold sm:mt-1">
             <StatisticsCard
                 count={todosCount}
-                label={`${todosNoun} tracket
+                label={`${todosNoun} tracked
                     at the moment!`}
             />
             <StatisticsCard
