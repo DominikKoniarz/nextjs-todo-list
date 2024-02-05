@@ -7,7 +7,7 @@ export default function FiltersButtonsWrapper() {
     const filter = useFilter();
 
     return (
-        <div className="flex flex-row items-center gap-4">
+        <div className="flex flex-row items-center gap-3 sm:gap-4">
             <FilterButton
                 text="All"
                 selected={filter === "all"}

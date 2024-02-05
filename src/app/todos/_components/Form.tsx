@@ -20,7 +20,7 @@ export default function Form({ addOptimisticTodo }: Props) {
                 addOptimisticTodo(newTodo);
                 addNewTodo(newTodo, setNewTodo);
             }}
-            className="flex h-fit flex-row items-center gap-4 text-lg font-bold"
+            className="flex h-fit flex-row items-center gap-3 text-base font-bold sm:gap-4 sm:text-lg"
         >
             <FormInput newTodo={newTodo} setNewTodo={setNewTodo} />
             <AddTodoButton />

@@ -7,7 +7,7 @@ type Props = {
 
 export default function TodosList({ todos }: Props) {
     return (
-        <ul className="flex flex-col gap-4">
+        <ul className="flex flex-col gap-3 sm:gap-4">
             {todos.length > 0 ? (
                 todos.map((todo) => (
                     <Todo

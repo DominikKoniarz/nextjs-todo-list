@@ -18,7 +18,10 @@ const FilterButton = ({ text, selected, whatToFilter }: Props) => {
             type="button"
             className={`w-1/3 rounded-md border-2 text-sm font-bold transition-all duration-200 ${selectedClasses}`}
         >
-            <Link href={todosURL} className="block h-fit w-full px-5 py-2">
+            <Link
+                href={todosURL}
+                className="block h-fit w-full px-1 py-2 text-center sm:px-5"
+            >
                 {text}
             </Link>
         </button>

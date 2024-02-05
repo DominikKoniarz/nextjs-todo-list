@@ -13,7 +13,7 @@ export default function FormInput({ newTodo, setNewTodo }: Props) {
             required
             id="todo"
             placeholder="Your todo"
-            className="w-full rounded-lg p-3 text-black"
+            className="w-full rounded-lg p-2 text-black sm:p-3"
             autoComplete="off"
             value={newTodo}
             onChange={(e) => setNewTodo(e.target.value)}

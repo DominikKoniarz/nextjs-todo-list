@@ -18,6 +18,9 @@ const config = {
             },
         },
         extend: {
+            screens: {
+                xs: "400px",
+            },
             height: {
                 22: "5.5rem",
             },
