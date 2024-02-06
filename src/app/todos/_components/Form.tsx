@@ -10,7 +10,7 @@ type Props = {
 };
 
 export default function Form({ addOptimisticTodo }: Props) {
-    const addNewTodo = useAddNewTodo();
+    const { addNewTodo, pending } = useAddNewTodo();
     const [newTodo, setNewTodo] = useState<string>("");
 
     return (
@@ -23,7 +23,7 @@ export default function Form({ addOptimisticTodo }: Props) {
             className="flex h-fit flex-row items-center gap-3 text-base font-bold sm:gap-4 sm:text-lg"
         >
             <FormInput newTodo={newTodo} setNewTodo={setNewTodo} />
-            <AddTodoButton />
+            <AddTodoButton pending={pending} />
         </form>
     );
 }
