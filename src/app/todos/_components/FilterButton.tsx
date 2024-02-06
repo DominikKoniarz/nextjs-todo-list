@@ -8,6 +8,7 @@ type Props = { text: string; selected: boolean; whatToFilter: string };
 const FilterButton = ({ text, selected, whatToFilter }: Props) => {
     const todosURL = useTodosPageURL();
     todosURL.searchParams.set("filter", whatToFilter);
+    todosURL.searchParams.delete("page");
 
     const selectedClasses = selected
         ? "bg-slate-800 border-white text-white"
