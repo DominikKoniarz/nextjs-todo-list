@@ -13,7 +13,7 @@ export default function LogoutWrapper() {
 
         const timer = setTimeout(() => {
             if (pathname.includes("/todos")) setIsReadyToRender(true);
-        }, 300);
+        }, 250);
 
         return () => clearTimeout(timer);
     }, [pathname]);
