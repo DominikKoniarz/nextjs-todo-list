@@ -23,7 +23,8 @@ const useHandleSubmit = () => {
             redirect: false,
         });
 
-        if (response && !response.ok) toast.error("Invalid credentials!");
+        if (response && !response.ok)
+            return toast.error("Invalid credentials!");
 
         startTransition(() => router.push("/todos"));
     };
