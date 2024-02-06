@@ -27,7 +27,7 @@ export default async function TodosPage({ searchParams }: Props) {
 
     const [todos, count] = await Promise.all([todosData, countData]);
 
-    if (todos.length === 0) redirect("/todos");
+    if (todos.length === 0 && count > 0) redirect("/todos");
 
     return (
         <main className="flex h-full w-full flex-col items-center justify-center gap-4">
