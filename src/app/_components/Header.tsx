@@ -28,6 +28,7 @@ export default function Header() {
                         text={item.text}
                     />
                 ))}
+
                 <LogoutWrapper />
             </ul>
         </header>
