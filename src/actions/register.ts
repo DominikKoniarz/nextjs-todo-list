@@ -4,6 +4,7 @@ import prisma from "@/lib/prisma";
 import { RegisterFormData } from "@/types/registerForm";
 import { z } from "zod";
 import { hashPassword } from "@/lib/passwords";
+import logError from "@/lib/logError";
 
 type RegisterErrors = {
     email?: string[] | undefined;
@@ -64,6 +65,11 @@ export default async function registerUser(
 
         return null;
     } catch (error) {
+        const errorMessage =
+            error instanceof Error
+                ? error.message
+                : "Server error occurred while registering user!";
+        logError("addTodo", errorMessage);
         return { serverError: ["Server error!"] };
     }
 }

@@ -1,6 +1,7 @@
 "use server";
 
 import getAuth from "@/lib/getAuth";
+import logError from "@/lib/logError";
 import prisma from "@/lib/prisma";
 import { revalidatePath } from "next/cache";
 
@@ -33,8 +34,11 @@ const deleteTodo = async (id: string): Promise<ErrorResponse | null> => {
         revalidatePath("/todos");
         return null;
     } catch (error) {
-        // console.error(error);
-        // logging here
+        const errorMessage =
+            error instanceof Error
+                ? error.message
+                : "Server error occurred while deleting todo";
+        logError("addTodo", errorMessage);
         return { error: "Server error occurred" };
     }
 };

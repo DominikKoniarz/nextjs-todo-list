@@ -1,3 +1,4 @@
+import logError from "@/lib/logError";
 import { verifyPassword } from "@/lib/passwords";
 import prisma from "@/lib/prisma";
 import { RequestInternal } from "next-auth";
@@ -28,8 +29,11 @@ export default async function authorize(
             image: user.image,
         };
     } catch (error) {
-        // logging will be here
-        console.log(error);
+        const errorMessage =
+            error instanceof Error
+                ? error.message
+                : "Server error occurred while authorizing user!";
+        logError("addTodo", errorMessage);
         return null;
     }
 }

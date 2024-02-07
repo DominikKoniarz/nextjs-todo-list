@@ -1,6 +1,7 @@
 "use server";
 
 import getAuth from "@/lib/getAuth";
+import logError from "@/lib/logError";
 import prisma from "@/lib/prisma";
 import { revalidatePath } from "next/cache";
 import { z } from "zod";
@@ -39,7 +40,11 @@ const addTodo = async (newTodo: string): Promise<Status> => {
 
         return null;
     } catch (error) {
-        // logging here will be
+        const errorMessage =
+            error instanceof Error
+                ? error.message
+                : "An error occurred while adding the todo!";
+        logError("addTodo", errorMessage);
         return { error: "An error occurred while adding the todo!" };
     }
 };
