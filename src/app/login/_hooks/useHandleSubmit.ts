@@ -1,12 +1,8 @@
 import { signIn } from "next-auth/react";
-import { useRouter } from "next/navigation";
-import { FormEvent, useTransition } from "react";
+import { FormEvent } from "react";
 import toast from "react-hot-toast";
 
 const useHandleSubmit = () => {
-    const [, startTransition] = useTransition();
-    const router = useRouter();
-
     const handleSubmit = async (
         e: FormEvent<HTMLFormElement>,
         email: string,
@@ -20,13 +16,12 @@ const useHandleSubmit = () => {
         const response = await signIn("credentials", {
             email,
             password,
-            redirect: false,
+            redirect: true,
+            callbackUrl: "/todos",
         });
 
         if (response && !response.ok)
             return toast.error("Invalid credentials!");
-
-        startTransition(() => router.push("/todos"));
     };
 
     return handleSubmit;
