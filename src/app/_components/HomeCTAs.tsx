@@ -5,7 +5,7 @@ export default function HomeCTAs() {
                 Organise your life in a professional way!
             </h1>
             <p className="mx-auto h-fit w-fit px-6 text-center text-base font-normal sm:px-0 sm:text-lg md:text-xl">
-                Menage your tasks, projects and notes in one place.
+                Manage your tasks, projects and notes in one place.
             </p>
         </>
     );
