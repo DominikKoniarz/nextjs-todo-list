@@ -6,10 +6,9 @@ import PasswordInput from "./PasswordInput";
 import SubmitButton from "./SubmitButton";
 import { useState } from "react";
 import useHandleSubmit from "../_hooks/useHandleSubmit";
-import OtherProvidersLogin from "./OtherProvidersLogin";
 
 export default function Form() {
-    const handleSubmit = useHandleSubmit();
+    const { handleSubmit, pending } = useHandleSubmit();
     const [email, setEmail] = useState<string>("");
     const [passsword, setPassword] = useState<string>("");
 
@@ -20,7 +19,7 @@ export default function Form() {
         >
             <EmailInput email={email} setEmail={setEmail} />
             <PasswordInput password={passsword} setPassword={setPassword} />
-            <SubmitButton />
+            <SubmitButton pending={pending} />
             <HorizontalORLine />
         </form>
     );

@@ -15,7 +15,7 @@ export default function Form() {
         mode: "onSubmit",
         reValidateMode: "onSubmit",
     });
-    const onSubmit = useOnSubmit(methods.reset);
+    const { onSubmit, pending } = useOnSubmit(methods.reset);
     useToast(methods.formState);
 
     return (
@@ -27,7 +27,7 @@ export default function Form() {
                 <EmailInput />
                 <UsernameInput />
                 <PasswordInput />
-                <SubmitButton />
+                <SubmitButton pending={pending} />
                 <HorizontalORLine />
             </form>
         </FormProvider>
