@@ -2,7 +2,6 @@ import getAuth from "@/lib/getAuth";
 import { redirect } from "next/navigation";
 import LoginCTAs from "./_components/LoginCTAs";
 import Form from "./_components/Form";
-import { Toaster } from "react-hot-toast";
 import OtherProvidersLogin from "./_components/OtherProvidersLogin";
 import NewAccountLink from "./_components/NewAccountLink";
 
@@ -17,10 +16,6 @@ export default async function LoginPage() {
             <Form />
             <OtherProvidersLogin />
             <NewAccountLink />
-            <Toaster
-                position="bottom-right"
-                toastOptions={{ duration: 4000 }}
-            />
         </main>
     );
 }

@@ -1,6 +1,5 @@
 import getAuth from "@/lib/getAuth";
 import { redirect } from "next/navigation";
-import { Toaster } from "react-hot-toast";
 import getUserTodos from "@/lib/getUserTodos";
 import ClientComponentsWrapper from "./_components/ClientComponentsWrapper";
 import getFilter from "./_lib/getFilter";
@@ -35,10 +34,6 @@ export default async function TodosPage({ searchParams }: Props) {
                 todos={todos}
                 count={count}
                 selectedPage={page}
-            />
-            <Toaster
-                position="bottom-right"
-                toastOptions={{ duration: 2500 }}
             />
         </main>
     );

@@ -2,7 +2,6 @@ import { redirect } from "next/navigation";
 import getAuth from "@/lib/getAuth";
 import Form from "./_components/Form";
 import RegisterCTAs from "./_components/RegisterCTAs";
-import { Toaster } from "react-hot-toast";
 import OtherProvidersSignUp from "./_components/OtherProvidersSignUp";
 import LoginLink from "./_components/LoginLink";
 
@@ -17,10 +16,6 @@ export default async function RegisterPage() {
             <Form />
             <OtherProvidersSignUp />
             <LoginLink />
-            <Toaster
-                position="bottom-right"
-                toastOptions={{ duration: 4000 }}
-            />
         </main>
     );
 }

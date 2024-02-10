@@ -6,11 +6,13 @@ import PasswordInput from "./PasswordInput";
 import SubmitButton from "./SubmitButton";
 import { useState } from "react";
 import useHandleSubmit from "../_hooks/useHandleSubmit";
+import useOAuthError from "../_hooks/useOAuthError";
 
 export default function Form() {
     const { handleSubmit, pending } = useHandleSubmit();
     const [email, setEmail] = useState<string>("");
     const [passsword, setPassword] = useState<string>("");
+    useOAuthError();
 
     return (
         <form

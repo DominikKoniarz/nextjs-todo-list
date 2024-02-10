@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Instrument_Sans } from "next/font/google";
 import Header from "./_components/Header";
+import { Toaster } from "react-hot-toast";
 import "./globals.css";
 
 const instrumentSans = Instrument_Sans({
@@ -26,6 +27,10 @@ export default function RootLayout({
             >
                 <Header />
                 {children}
+                <Toaster
+                    position="bottom-right"
+                    toastOptions={{ duration: 4000 }}
+                />
             </body>
         </html>
     );
