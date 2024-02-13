@@ -25,7 +25,7 @@ export default function ClientComponentsWrapper({
     const availablePages = Math.ceil(count / 10);
 
     return (
-        <section className="xs:max-w-80 xs:px-0 mb-5 flex h-full w-full max-w-full flex-col gap-3 px-3.5 py-6 sm:max-w-96 sm:gap-4 sm:py-10 md:py-12">
+        <section className="flex h-full w-full max-w-full flex-col gap-3 px-3.5 py-6 xs:max-w-80 xs:px-0 sm:max-w-96 sm:gap-4 sm:py-10 md:py-12">
             <Form addOptimisticTodo={addOptimisticTodo} />
             <FiltersButtonsWrapper />
             <HorizontalLine />

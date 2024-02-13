@@ -10,7 +10,7 @@ export default function Pagination({ count, selectedPage }: Props) {
     const pagesArray = Array.from({ length: pages }, (_, i) => i + 1);
 
     return (
-        <ul className="mx-auto mt-1 flex w-fit flex-row gap-3">
+        <ul className="mx-auto flex w-fit flex-row gap-3 pb-5 pt-1">
             {pagesArray.map((page) => {
                 if (
                     selectedPage === page ||
