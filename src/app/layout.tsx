@@ -11,8 +11,28 @@ const instrumentSans = Instrument_Sans({
 });
 
 export const metadata: Metadata = {
-    title: "Todo List",
-    description: "Todo List application built with Next.js",
+    title: "Todo List - Next.js - Dominik Koniarz",
+    description: "Simple Todo List application built with Next.js",
+    keywords: [
+        "todo",
+        "list",
+        "next.js",
+        "NextJS",
+        "Dominik Koniarz",
+        "simple",
+        "manage your tasks",
+        "side project",
+        "ssr",
+        "server side rendering",
+        "isr",
+        "incremental static regeneration",
+        "react",
+        "typescript",
+        "aplikacja",
+        "lista zadań",
+    ],
+    robots: "index, follow",
+    authors: [{ name: "Dominik Koniarz" }],
 };
 
 export default function RootLayout({
