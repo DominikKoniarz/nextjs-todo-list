@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Instrument_Sans } from "next/font/google";
 import Header from "./_components/Header";
 import { Toaster } from "react-hot-toast";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import "./globals.css";
 
 const instrumentSans = Instrument_Sans({
@@ -40,6 +41,8 @@ export default function RootLayout({
 }: Readonly<{
     children: React.ReactNode;
 }>) {
+    const gaId = process.env.GA_ID ?? "";
+
     return (
         <html lang="en">
             <body
@@ -52,6 +55,7 @@ export default function RootLayout({
                     toastOptions={{ duration: 4000 }}
                 />
             </body>
+            <GoogleAnalytics gaId={gaId} />
         </html>
     );
 }
