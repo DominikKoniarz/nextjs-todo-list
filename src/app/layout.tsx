@@ -4,6 +4,7 @@ import Header from "./_components/Header";
 import { Toaster } from "react-hot-toast";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import "./globals.css";
+import Script from "next/script";
 
 const instrumentSans = Instrument_Sans({
     subsets: ["latin"],
@@ -56,6 +57,18 @@ export default function RootLayout({
                 />
             </body>
             <GoogleAnalytics gaId={gaId} />
+            <Script
+                id="google-analytics"
+                dangerouslySetInnerHTML={{
+                    __html: `
+                            window.dataLayer = window.dataLayer || [];
+                            function gtag(){dataLayer.push(arguments);}
+                            gtag('js', new Date());
+
+                            gtag('config', '${gaId}');
+                            `,
+                }}
+            ></Script>
         </html>
     );
 }
