@@ -5,7 +5,7 @@ export function middleware(request: NextRequest) {
     default-src 'self';
     script-src 'self' 'unsafe-eval' 'unsafe-inline' https://www.googletagmanager.com;
     style-src 'self' 'unsafe-inline';
-    connect-src 'self' www.google-analytics.com;
+    connect-src 'self' *.google-analytics.com;
     img-src 'self' blob: data:;
     font-src 'self' data:;
     object-src 'none';
@@ -34,10 +34,13 @@ export function middleware(request: NextRequest) {
 
     // add the CORS headers to the response
     response.headers.append("Access-Control-Allow-Credentials", "true");
-    response.headers.append("Access-Control-Allow-Origin", allowedOrigin);
+    response.headers.append(
+        "Access-Control-Allow-Origin",
+        `${allowedOrigin}, https://www.googletagmanager.com`,
+    );
     response.headers.append(
         "Access-Control-Allow-Methods",
-        "GET,DELETE,PATCH,POST,PUT",
+        "GET,DELETE,PATCH,POST,PUT,OPTIONS",
     );
     response.headers.append(
         "Access-Control-Allow-Headers",
