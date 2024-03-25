@@ -1,30 +1,30 @@
 import { NextRequest, NextResponse } from "next/server";
 
 export function middleware(request: NextRequest) {
-    const cspHeader = `
-    default-src 'self';
-    script-src 'self' 'unsafe-eval' 'unsafe-inline' https://www.googletagmanager.com;
-    style-src 'self' 'unsafe-inline';
-    img-src 'self' blob: data:;
-    font-src 'self' data:;
-    object-src 'none';
-    base-uri 'self';
-    form-action 'self';
-    frame-ancestors 'none';
-    block-all-mixed-content;
-    upgrade-insecure-requests;
-`;
-    // Replace newline characters and spaces
-    const contentSecurityPolicyHeaderValue = cspHeader
-        .replace(/\s{2,}/g, " ")
-        .trim();
+    //     const cspHeader = `
+    //     default-src 'self';
+    //     script-src 'self' 'unsafe-eval' 'unsafe-inline' https://www.googletagmanager.com;
+    //     style-src 'self' 'unsafe-inline';
+    //     img-src 'self' blob: data:;
+    //     font-src 'self' data:;
+    //     object-src 'none';
+    //     base-uri 'self';
+    //     form-action 'self';
+    //     frame-ancestors 'none';
+    //     block-all-mixed-content;
+    //     upgrade-insecure-requests;
+    // `;
+    //     // Replace newline characters and spaces
+    //     const contentSecurityPolicyHeaderValue = cspHeader
+    //         .replace(/\s{2,}/g, " ")
+    //         .trim();
 
     const response = NextResponse.next();
 
-    response.headers.set(
-        "Content-Security-Policy",
-        contentSecurityPolicyHeaderValue,
-    );
+    // response.headers.set(
+    //     "Content-Security-Policy",
+    //     contentSecurityPolicyHeaderValue,
+    // );
 
     const allowedOrigin: string =
         process.env.NODE_ENV === "development"
