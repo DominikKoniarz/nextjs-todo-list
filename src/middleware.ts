@@ -5,7 +5,7 @@ export function middleware(request: NextRequest) {
     default-src 'self';
     script-src 'self' 'unsafe-eval' 'unsafe-inline' https://www.googletagmanager.com;
     style-src 'self' 'unsafe-inline';
-    connect-src www.google-analytics.com;
+    connect-src 'self' www.google-analytics.com;
     img-src 'self' blob: data:;
     font-src 'self' data:;
     object-src 'none';
